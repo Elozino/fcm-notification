@@ -25,9 +25,10 @@ import { initializeFirebase, sendNotification } from "@elozino/fcm-notification"
 
 ```typescript
 import serviceAccount from "./path-to-your-google-service-account.json";
+import { InitOptions } from "@elozino/fcm-notification/dist/types";
 
 const app = initializeFirebase({
-  serviceAccount: serviceAccount as admin.ServiceAccount,
+  serviceAccount: serviceAccount as InitOptions['serviceAccount'],
 });
 
 console.log("Firebase initialized:", app);
